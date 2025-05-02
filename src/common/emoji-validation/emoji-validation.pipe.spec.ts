@@ -11,17 +11,17 @@ describe('EmojiValidationPipe', () => {
     const result = emojiPipe.transform(undefined);
     expect(result).toBeUndefined();
   });
-  it('should throw a bad request erro if the value is not a number', () => {
+  it('should throw a bad request error if the value is not a number', () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     const result = () => emojiPipe.transform('not a number');
     expect(result).toThrow(BadRequestException);
   });
-  it('should throw a bad request erro if the value is less than 0', () => {
+  it('should throw a bad request error if the value is less than 0', () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     const result = () => emojiPipe.transform(-1);
     expect(result).toThrow(BadRequestException);
   });
-  it('should throw a bad request erro if the value is greater than 10', () => {
+  it('should throw a bad request error if the value is greater than 10', () => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     const result = () => emojiPipe.transform(11);
     expect(result).toThrow(BadRequestException);
